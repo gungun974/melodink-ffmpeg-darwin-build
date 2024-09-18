@@ -5,11 +5,11 @@ set -u # treat unset variables as an error
 
 cd ${SRC_DIR}
 
-patch -p1 <${PROJECT_DIR}/patches/mpv-fix-missing-objc.patch
-patch -p1 <${PROJECT_DIR}/patches/mpv-mix-with-others.patch
-if [ "${VARIANT}" == "audio" ]; then
-    patch -p1 <${PROJECT_DIR}/patches/mpv-remove-libass.patch
-fi
+#patch -p1 <${PROJECT_DIR}/patches/mpv-fix-missing-objc.patch
+#patch -p1 <${PROJECT_DIR}/patches/mpv-mix-with-others.patch
+#if [ "${VARIANT}" == "audio" ]; then
+#    patch -p1 <${PROJECT_DIR}/patches/mpv-remove-libass.patch
+#fi
 
 DISABLE_ALL_OPTIONS=(
     `# booleans`
@@ -36,12 +36,10 @@ DISABLE_ALL_OPTIONS=(
     -Drubberband=disabled `# librubberband support`
     -Dsdl2=disabled `# SDL2`
     -Dsdl2-gamepad=disabled `# SDL2 gamepad input`
-    -Dstdatomic=disabled `# C11 stdatomic.h`
     -Duchardet=disabled `# uchardet support`
     -Duwp=disabled `# Universal Windows Platform`
     -Dvapoursynth=disabled `# VapourSynth filter bridge`
     -Dvector=disabled `# GCC vector instructions`
-    -Dwin32-internal-pthreads=disabled `#internal pthread wrapper for win32 (Vista+)`
     -Dzimg=disabled `# libzimg support (high quality software scaler)`
     -Dzlib=disabled `# zlib`
 
@@ -58,6 +56,7 @@ DISABLE_ALL_OPTIONS=(
     -Dsdl2-audio=disabled `# SDL2 audio output`
     -Dsndio=disabled `# sndio audio output`
     -Dwasapi=disabled `# WASAPI audio output`
+    -Davfoundation=disabled
 
     `# video output features`
     -Dcaca=disabled `# CACA`
@@ -80,8 +79,6 @@ DISABLE_ALL_OPTIONS=(
     -Dgl-win32=disabled `# OpenGL Win32 Backend`
     -Dgl-x11=disabled `# OpenGL X11/GLX (deprecated/legacy)`
     -Djpeg=disabled `# JPEG support`
-    -Dlibplacebo=disabled `# libplacebo support`
-    -Drpi=disabled `# Raspberry Pi support`
     -Dsdl2-video=disabled `# SDL2 video output`
     -Dshaderc=disabled `# libshaderc SPIR-V compiler`
     -Dsixel=disabled `# Sixel`
@@ -93,7 +90,6 @@ DISABLE_ALL_OPTIONS=(
     -Dvaapi-drm=disabled `# VAAPI (DRM/EGL support)`
     -Dvaapi-wayland=disabled `# VAAPI (Wayland support)`
     -Dvaapi-x11=disabled `# VAAPI (X11 support)`
-    -Dvaapi-x-egl=disabled `# VAAPI EGL on X11`
     -Dvulkan=disabled `# Vulkan context support`
     -Dwayland=disabled `# Wayland`
     -Dx11=disabled `# X11`
@@ -107,13 +103,13 @@ DISABLE_ALL_OPTIONS=(
     -Dd3d9-hwaccel=disabled `# DXVA2 hwaccel`
     -Dgl-dxinterop-d3d9=disabled `# OpenGL/DirectX Interop Backend DXVA2 interop`
     -Dios-gl=disabled `# iOS OpenGL ES hardware decoding interop support`
-    -Drpi-mmal=disabled `# Raspberry Pi MMAL hwaccel`
     -Dvideotoolbox-gl=disabled `# Videotoolbox with OpenGL`
 
     `# macOS features`
-    -Dmacos-10-11-features=disabled `# macOS 10.11 SDK Features`
-    -Dmacos-10-12-2-features=disabled `# macOS 10.12.2 SDK Features`
-    -Dmacos-10-14-features=disabled `# macOS 10.14 SDK Features`
+    -Dmacos-10-15-4-features=disabled
+    -Dmacos-11-features=disabled
+    -Dmacos-11-3-features=disabled
+    -Dmacos-12-features=disabled
     -Dmacos-cocoa-cb=disabled `# macOS libmpv backend`
     -Dmacos-media-player=disabled `# macOS Media Player support`
     -Dmacos-touchbar=disabled `# macOS Touch Bar support`
@@ -148,6 +144,8 @@ COMMON_VIDEO_OPTIONS=(
 MACOS_OPTIONS=(
     `# audio output features`
     -Dcoreaudio=enabled `# CoreAudio audio output`
+
+    -Dswift-build=enabled `# macOS Swift build tools`
 
     `# video output features`
     -Dcocoa=enabled `# Cocoa` `# BUG: required in audio mode since v0.36.0`
