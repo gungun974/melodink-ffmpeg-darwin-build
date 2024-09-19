@@ -49,6 +49,16 @@ find ${DEPS} -name "*.dylib" -type f | while read DYLIB; do
     mkdir -p "${FRAMEWORK_DIR}/Versions/A"
     cp "${DYLIB}" "${FRAMEWORK_DIR}/Versions/A/${FRAMEWORK_NAME}"
 
+    # search and copy headers
+    mkdir -p "${FRAMEWORK_DIR}/Versions/A/Headers"
+    HEADER_INCLUDE="/include/$(basename $DYLIB | cut -d. -f1 | sed 's/^lib//')"
+
+    HEADER_DIRECTORY=$(find "$PROJECT_DIR/build/intermediate" -type d -path "*$HEADER_INCLUDE" -exec realpath {} \; -quit)
+
+    if [ -n "$HEADER_DIRECTORY" ]; then
+      find "$HEADER_DIRECTORY" -type f -exec cp {} "${FRAMEWORK_DIR}/Versions/A/Headers/" \;
+    fi
+
     # replace DYLIB var
     DYLIB="${FRAMEWORK_DIR}/Versions/A/${FRAMEWORK_NAME}"
 
@@ -91,4 +101,5 @@ find ${DEPS} -name "*.dylib" -type f | while read DYLIB; do
     ln -s A "${FRAMEWORK_DIR}/Versions/Current"
     ln -s Versions/Current/${FRAMEWORK_NAME} "${FRAMEWORK_DIR}/${FRAMEWORK_NAME}"
     ln -s Versions/Current/Resources "${FRAMEWORK_DIR}/Resources"
+    ln -s Versions/Current/Headers "${FRAMEWORK_DIR}/Headers"
 done
