@@ -71,9 +71,9 @@ mbedtls:
   url: https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.4.1.tar.gz
   sha256: a420fcf7103e54e775c383e3751729b8fb2dcd087f6165befd13f28315f754f5
 mpv:
-  version: 0.38.0
-  url: https://github.com/mpv-player/mpv/archive/21a0fa7abed80c3b1e2a9b1707e882d82795ac56.tar.gz
-  sha256: 959ab00d5576d5bf80654d53106ba25c927a5242db0a31f41086b6097e231df4
+  version: 0.39.0
+  url: https://github.com/mpv-player/mpv/archive/a0fba7be57f3822d967b04f0f6b6d6341e7516e7.tar.gz
+  sha256: f04f22cb1ef3bcf635dd14cabf23b2366a73bf7d53da22134fa4e819ab60ee24
 pkg-config:
   version: 0.29.2
   url: https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
