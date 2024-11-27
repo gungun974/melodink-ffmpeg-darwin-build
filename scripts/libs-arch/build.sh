@@ -19,8 +19,8 @@ find ${OUTPUT_DIR} -type f -name '*.dylib' -exec \
     \;
 
 # rename libmpv file
-mv ${OUTPUT_DIR}/libmpv.*.dylib ${OUTPUT_DIR}/libmpv.dylib
-install_name_tool -id @rpath/libmpv.dylib ${OUTPUT_DIR}/libmpv.dylib
+#mv ${OUTPUT_DIR}/libmpv.*.dylib ${OUTPUT_DIR}/libmpv.dylib
+#install_name_tool -id @rpath/libmpv.dylib ${OUTPUT_DIR}/libmpv.dylib
 
 # fix deps paths
 ${PROJECT_DIR}/scripts/libs-arch/relink-dylibs.sh ${PROJECT_DIR} @rpath ${OUTPUT_DIR}

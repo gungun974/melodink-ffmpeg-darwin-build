@@ -6,26 +6,6 @@ ffmpeg:
   version: "7.0.2"
   url: https://ffmpeg.org/releases/ffmpeg-7.0.2.tar.xz
   sha256: 8646515b638a3ad303e23af6a3587734447cb8fc0a0c064ecdb8e95c4fd8b389
-freetype:
-  version: 2.13.2
-  url: https://downloads.sourceforge.net/project/freetype/freetype2/2.13.2/freetype-2.13.2.tar.xz
-  sha256: 12991c4e55c506dd7f9b765933e62fd2be2e06d421505d7950a132e4f1bb484d
-fribidi:
-  version: 1.0.13
-  url: https://github.com/fribidi/fribidi/releases/download/v1.0.13/fribidi-1.0.13.tar.xz
-  sha256: 7fa16c80c81bd622f7b198d31356da139cc318a63fc7761217af4130903f54a2
-harfbuzz:
-  version: 8.1.1
-  url: https://github.com/harfbuzz/harfbuzz/archive/8.1.1.tar.gz
-  sha256: b16e6bc0fc7e6a218583f40c7d201771f2e3072f85ef6e9217b36c1dc6b2aa25
-libass:
-  version: 0.17.1
-  url: https://github.com/libass/libass/releases/download/0.17.1/libass-0.17.1.tar.xz
-  sha256: f0da0bbfba476c16ae3e1cfd862256d30915911f7abaa1b16ce62ee653192784
-libplacebo:
-  version: 7.349.0
-  url: https://github.com/haasn/libplacebo/archive/refs/tags/v7.349.0.tar.gz
-  sha256: 627e32439a0b3d2b90368ead7e919f470ee7446c87cc0f7841bbe319b23aa8b1
 fast_float:
   version: 5.2.0
   url: https://github.com/fastfloat/fast_float/archive/refs/tags/v5.2.0.tar.gz
@@ -70,15 +50,7 @@ mbedtls:
   version: 3.4.1
   url: https://github.com/Mbed-TLS/mbedtls/archive/refs/tags/v3.4.1.tar.gz
   sha256: a420fcf7103e54e775c383e3751729b8fb2dcd087f6165befd13f28315f754f5
-mpv:
-  version: 0.39.0
-  url: https://github.com/mpv-player/mpv/archive/a0fba7be57f3822d967b04f0f6b6d6341e7516e7.tar.gz
-  sha256: f04f22cb1ef3bcf635dd14cabf23b2366a73bf7d53da22134fa4e819ab60ee24
 pkg-config:
   version: 0.29.2
   url: https://pkgconfig.freedesktop.org/releases/pkg-config-0.29.2.tar.gz
   sha256: 6fc69c01688c9458a57eb9a1664c9aba372ccda420a02bf4429fe610e7e7d591
-uchardet:
-  version: 0.0.8
-  url: https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.8.tar.xz
-  sha256: e97a60cfc00a1c147a674b097bb1422abd9fa78a2d9ce3f3fdcc2e78a34ac5f0
