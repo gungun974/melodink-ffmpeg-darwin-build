@@ -10,6 +10,7 @@ patch -p1 <${PROJECT_DIR}/patches/ffmpeg-fix-ios-hdr-texture.patch
 patch -p1 <${PROJECT_DIR}/patches/ffmpeg-fix-dash-base-url-escape.patch
 patch -p1 <${PROJECT_DIR}/patches/ffmpeg-hls-seek-patch-1.patch
 patch -p1 <${PROJECT_DIR}/patches/ffmpeg-hls-seek-patch-2.patch
+patch -p1 <${PROJECT_DIR}/patches/return-eio-for-prematurely-broken-connection.patch
 
 cp ${PROJECT_DIR}/scripts/ffmpeg/meson.* .
 
